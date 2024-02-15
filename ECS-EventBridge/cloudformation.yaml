@@ -1,0 +1,52 @@
+AWSTemplateFormatVersion: 2010-09-09
+...
+
+Resources:
+  ...
+
+  ExampleEventBridgeRule:
+    Type: AWS::Events::Rule
+    Properties:
+      Description: String
+      EventBusName: String
+      EventPattern: Json
+      Name: String
+      RoleArn: String
+      ScheduleExpression: String # CRON expression
+      State: String
+      Targets:
+        - Arn: String
+          EcsParameters:
+            LaunchType: FARGATE
+            NetworkConfiguration:
+              NetworkConfiguration
+            TaskCount: 1
+            TaskDefinitionArn: String
+          Id: String
+          RoleArn: String
+          Input: !Sub '{"containerOverrides":[{"name":"${ContainerName}","command":["python","script.py"]}]}'
+
+  ExampleSchedule:
+    Type: AWS::Scheduler::Schedule
+    Properties:
+      Description: String
+      EndDate: String
+      FlexibleTimeWindow: 
+        FlexibleTimeWindow
+      GroupName: String
+      KmsKeyArn: String
+      Name: String
+      ScheduleExpression: String # CRON expression
+      ScheduleExpressionTimezone: String
+      StartDate: String
+      State: String
+      Target: 
+        Arn: String
+        EcsParameters:
+          LaunchType: FARGATE
+          NetworkConfiguration:
+            NetworkConfiguration
+          TaskCount: 1
+          TaskDefinitionArn: String
+        RoleArn: String
+        Input: !Sub '{"containerOverrides":[{"name":"${ContainerName}","command":["python","script.py"]}]}'

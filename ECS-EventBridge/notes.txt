@@ -1,0 +1,19 @@
+Commands
+--------
+docker build -t example .
+
+docker run --rm -it -p 8000:8000 example
+
+curl localhost:8000
+
+docker run --rm -it -p 8000:8000 example python script.py
+
+docker rmi example
+
+Links
+-----
+https://docs.aws.amazon.com/eventbridge/latest/pipes-reference/API_EcsContainerOverride.html
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html
+
+https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedule.html
